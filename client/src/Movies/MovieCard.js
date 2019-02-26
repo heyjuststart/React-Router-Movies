@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MovieCard = ({movie: { title, director, metascore, stars, id  }}) => {
+const MovieCard = ({
+  savedList,
+  addToSavedList,
+  movie,
+  movie: { title, director, metascore, stars, id }
+}) => {
   return (
     <Link to={`/movies/${id}`} className="movie-card">
       <h2>{title}</h2>
@@ -18,6 +23,16 @@ const MovieCard = ({movie: { title, director, metascore, stars, id  }}) => {
           {star}
         </div>
       ))}
+      <button
+        className="save-button"
+        onClick={(e) =>{
+          e.preventDefault();
+          addToSavedList(movie);
+        }}
+        disabled={savedList.findIndex(m => m.id === id) > -1}
+      >
+        Save
+      </button>
     </Link>
   );
 };
