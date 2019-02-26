@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default class SavedList extends Component {
   constructor(props) {
@@ -15,6 +15,7 @@ export default class SavedList extends Component {
             to={`/movies/${movie.id}`}
             className="saved-movie"
             key={movie.id}
+            activeClassName="saved-active"
           >
             {movie.title}
           </NavLink>
