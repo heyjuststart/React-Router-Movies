@@ -6,6 +6,7 @@ body {
 }
 
 .movie-card {
+  display: block;
   background-color: #fff;
   border: 0;
   box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
@@ -60,10 +61,16 @@ body {
   border: 1px solid grey;
   padding: 5px 10px;
   background-color: lightseagreen;
+  cursor: pointer;
 }
 .save-button:hover {
   background-color: green;
   color: white;
+}
+.save-button:disabled {
+  cursor: auto;
+  background-color: lightgrey;
+  color: grey;
 }
 
 .home-button {
